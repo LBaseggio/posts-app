@@ -37,22 +37,28 @@ export default function Home() {
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis quo dolor rerum laborum, repellendus
               accusantium cum odit.
             </p>
-            <p>14/03/2021</p>
+            <p className={styles.postDate}>14/03/2021</p>
           </li>
           <li>
             <p className={styles.postsContent}>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, laboriosam, mollitia odit nihil provident
               enim animi maiores cum aspernatur incidunt, deleniti nisi impedit officia?
             </p>
-            <p>15/03/2021</p>
+            <p className={styles.postDate}>15/03/2021</p>
           </li>
           <li>
             <p className={styles.postsContent}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Error natus tempora quis harum et dolores cum magni veniam suscipit!
             </p>
-            <p>16/03/2021</p>
+            <p className={styles.postDate}>16/03/2021</p>
           </li>
         </ul>
+
+        <form>
+          <textarea className={styles.formContent} placeholder="Type your message" />
+          <button className={styles.formButton} type="submit"> add post </button>
+        </form>
+
       </main>
     </section>
   );
