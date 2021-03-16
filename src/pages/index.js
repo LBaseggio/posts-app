@@ -3,64 +3,34 @@ import styles from '../styles/Home.module.scss';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Posts App - Next.js</title>
+        <link rel="icon" href="/posts-app.ico" />
+        <meta charSet="utf-8" />
+        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="owner" content="Leandro Baseggio, leandro.baseggio@gmail.com" />
+        <meta name="author" content="Leandro Baseggio, leandro.baseggio@gmail.com" />
+        <meta name="title" content="Posts App - Next.js" />
+        <meta name="subtitle" content="Leandro Baseggio – Frontend Developer – React" />
+        <meta name="keywords" content="Leandro Baseggio, Frontend Developer " />
+        <meta name="subject" content="Leandro Baseggio – Portfolio | Frontend Developer – React" />
+        <meta name="description" content="Leandro Baseggio | Frontend Developer – React" />
+        <meta name="summary" content="Leandro Baseggio – Portfolio | Frontend Developer – React" />
+        <meta name="reply-to" content="leandro.baseggio@gmail.com" />
+        {/* <meta name="url" content="https://leandro-baseggio.netlify.app/" /> */}
+        {/* <meta name="identifier-URL" content="https://leandro-baseggio.netlify.app/" /> */}
+        <meta name="category" content="portfolio" />
+        {/* <meta name="search_date" content="2021-03-01" /> */}
+        <meta name="robots" content="index,follow" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
           My Posts
         </h1>
-
-        <p className={styles.description}>
-          Get started by editing
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by
-          {' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+    </section>
   );
 }
