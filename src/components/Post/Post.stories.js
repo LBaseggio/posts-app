@@ -6,5 +6,10 @@ export default {
   component: Post,
 };
 
-const Template = (args) => <Post {...args} />;
+const Template = () => (
+  <Post
+    content="This is the post prop CONTENT"
+    date="15/03/2021"
+  />
+);
 export const Default = Template.bind({});
