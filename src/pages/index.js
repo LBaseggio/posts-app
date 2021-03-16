@@ -1,7 +1,9 @@
+/* eslint-disable jsx-a11y/aria-role */
 /* eslint-disable max-len */
 import Head from 'next/head';
+import Bio from '../components/Bio/Bio';
 import Post from '../components/Post';
-import PostForm from '../components/Post/PostForm/PostForm';
+import PostForm from '../components/PostForm/PostForm';
 import styles from '../styles/Home.module.scss';
 
 export default function Home() {
@@ -35,8 +37,15 @@ export default function Home() {
           My Posts App
         </h1>
         <h4 className={styles.subtitle}>
-          Next.js, HTML, Sass, StoryBook
+          Next.js, StoryBook, HTML, Sass, React-Icons
         </h4>
+
+        <Bio
+          headshot="https://i.pravatar.cc/400?img=51"
+          name="Colby Fayock"
+          tagline="Helping others to learn by doing!"
+          role="Developer Advocate @ Applitools"
+        />
 
         <ul className={styles.posts}>
           <li>

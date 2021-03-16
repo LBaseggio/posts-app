@@ -27,7 +27,8 @@
         }], //should add ".ts" if typescript project
         "react/jsx-props-no-spreading": "off",
         "react/prop-types": "off",
-        "max-len": ["error", { "code": 100, "ignoreUrls": true }]
+        "max-len": ["error", { "code": 100, "ignoreUrls": true }],
+        "jsx-a11y/aria-role": "false"
 
     }
 }

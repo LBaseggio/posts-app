@@ -1,0 +1,46 @@
+.bio {
+    display: flex;
+}
+
+.bioImage {
+    display: flex;
+    margin-right: 2rem;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 8rem;
+        height: auto;
+        border-radius: 50%;
+    }
+
+}
+
+.bioContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1rem;
+    margin: 0;
+}
+
+.bioContentName {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #004FA8;
+    margin: .6rem 0 .9rem 0;
+}
+
+.bioContentTagline {
+    font-size: 1.3rem;
+    color: #414141;
+    margin: .6rem 0;
+
+}
+
+.bioContentRole {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #414141;
+    margin: .6rem 0;
+}
