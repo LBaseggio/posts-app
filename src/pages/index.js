@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import Head from 'next/head';
 import Post from '../components/Post';
+import PostForm from '../components/Post/PostForm/PostForm';
 import styles from '../styles/Home.module.scss';
 
 export default function Home() {
@@ -64,10 +65,7 @@ export default function Home() {
           </li>
         </ul>
 
-        <form>
-          <textarea className={styles.formContent} placeholder="Type your message" />
-          <button className={styles.formButton} type="submit"> add post </button>
-        </form>
+        <PostForm />
 
       </main>
     </section>
