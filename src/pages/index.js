@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <section className={styles.container}>
       <Head>
-        <title>Posts App - Next.js</title>
+        <title>Twitter Dupe</title>
         <link rel="icon" href="/posts-app.ico" />
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -34,7 +34,7 @@ export default function Home() {
       <main className={styles.main}>
 
         <h1 className={styles.title}>
-          My Posts App
+        Twitter Dupe
         </h1>
         <h4 className={styles.subtitle}>
           Next.js, StoryBook, HTML, Sass, React-Icons
