@@ -1,0 +1,16 @@
+$primary-color: #0070f3;
+$secondary-color: #004fa8;
+
+.postsContent {
+    font-size: 1.5rem;
+    line-height: 3rem;
+    margin-bottom: 0.5rem;
+    text-align: justify;
+}
+
+.postDate {
+    font-size: .95rem;
+    font-weight: 700;
+    color: $secondary-color;
+    margin: 0 0 0 0;
+}

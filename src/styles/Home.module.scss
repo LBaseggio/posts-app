@@ -24,54 +24,49 @@ $secondary-color: #004fa8;
   color: $secondary-color
 }
 
-.posts{
+.subtitle {
+  margin: .8rem 0 0 0;
+  font-size: 1rem;
+  text-align: center;
+  color: $secondary-color
+}
+
+
+.posts {
   list-style: none;
   padding: 0 0;
   margin: 5rem 0;
 
-  li{
+  li {
     margin-bottom: 3rem;
-    &:last-child{
-      margin-bottom:0;
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
-  p{
-    &:first-child{
-      margin-top:0;
+  p {
+    &:first-child {
+      margin-top: 0;
     }
-    &:last-child{
-      margin-bottom:0;
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }
 
-.postsContent{
-  font-size: 1.5rem;
-  line-height: 3rem;
-  margin-bottom: 0.5rem;
-  text-align: justify;
-}
 
-.postDate{
-  font-size: .95rem;
-  font-weight: 700;
-  color: $secondary-color;
-  margin: 0 0 0 0;
-}
-
-.formContent{
+.formContent {
   width: 100%;
   min-height: 6rem;
   margin: 0 0 1rem 0;
   padding: 1rem;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1rem;
-  border-radius:.4rem;
+  border-radius: .4rem;
 }
 
 
-.formButton{
+.formButton {
   float: right;
   cursor: pointer;
   color: #fff;
@@ -80,9 +75,9 @@ $secondary-color: #004fa8;
   text-transform: capitalize;
   line-height: 1;
 
-  padding: .75em 1.5em;  
+  padding: .75em 1.5em;
   border: 2px solid #fff;
-  border-radius:.4rem;
+  border-radius: .4rem;
   outline: 2px solid #fff;
   outline-offset: -2px;
 
@@ -95,6 +90,6 @@ $secondary-color: #004fa8;
 .formButton:focus {
   outline: 2px solid #fff;
   outline-offset: -8px;
-  border-radius:.4rem;
+  border-radius: .4rem;
   border-color: $secondary-color;
 }

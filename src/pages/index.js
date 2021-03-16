@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import Head from 'next/head';
+import Post from '../components/Post';
 import styles from '../styles/Home.module.scss';
 
 export default function Home() {
@@ -28,29 +29,38 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+
         <h1 className={styles.title}>
-          My Posts
+          My Posts App
         </h1>
+        <h4 className={styles.subtitle}>
+          Next.js, HTML, Sass, StoryBook
+        </h4>
+
         <ul className={styles.posts}>
           <li>
-            <p className={styles.postsContent}>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis quo dolor rerum laborum, repellendus
-              accusantium cum odit.
-            </p>
-            <p className={styles.postDate}>14/03/2021</p>
+            <Post
+              content="This is the post prop CONTENT"
+              date="12/03/2021"
+            />
           </li>
           <li>
-            <p className={styles.postsContent}>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, laboriosam, mollitia odit nihil provident
-              enim animi maiores cum aspernatur incidunt, deleniti nisi impedit officia?
-            </p>
-            <p className={styles.postDate}>15/03/2021</p>
+            <Post
+              content="This is the post prop CONTENT"
+              date="13/03/2021"
+            />
           </li>
           <li>
-            <p className={styles.postsContent}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error natus tempora quis harum et dolores cum magni veniam suscipit!
-            </p>
-            <p className={styles.postDate}>16/03/2021</p>
+            <Post
+              content="This is the post prop CONTENT"
+              date="14/03/2021"
+            />
+          </li>
+          <li>
+            <Post
+              content="This is the post prop CONTENT"
+              date="15/03/2021"
+            />
           </li>
         </ul>
 
