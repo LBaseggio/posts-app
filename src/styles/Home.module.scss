@@ -1,4 +1,5 @@
 $primary-color: #0070f3;
+$secondary-color: #004fa8;
 
 .container {
   display: flex;
@@ -20,6 +21,7 @@ $primary-color: #0070f3;
   line-height: 1.15;
   font-size: 2.5rem;
   text-align: center;
+  color: $secondary-color
 }
 
 .posts{
@@ -52,40 +54,47 @@ $primary-color: #0070f3;
 }
 
 .postDate{
-  font-size: .9rem;
-  font-weight: 600;
+  font-size: .95rem;
+  font-weight: 700;
+  color: $secondary-color;
+  margin: 0 0 0 0;
 }
 
 .formContent{
   width: 100%;
-  height: 6rem;
+  min-height: 6rem;
   margin: 0 0 1rem 0;
   padding: 1rem;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1rem;
+  border-radius:.4rem;
 }
 
 
 .formButton{
-  display: inline-block;
+  float: right;
   cursor: pointer;
-  text-decoration: none;
+  color: #fff;
   font-size: inherit;
-  border: 0;
+  text-decoration: none;
+  text-transform: capitalize;
   line-height: 1;
-  padding: .75em 1.5em;  
-  background: none;
 
-  color: $primary-color;
-  outline: 2px solid $primary-color;
-  border: 2px solid $primary-color;
+  padding: .75em 1.5em;  
+  border: 2px solid #fff;
+  border-radius:.4rem;
+  outline: 2px solid #fff;
   outline-offset: -2px;
+
   transition: outline-offset 150ms ease;
+
+  background: $secondary-color;
 }
 
 .formButton:hover,
 .formButton:focus {
-  outline: 2px solid $primary-color;
-  outline-offset: -6px;
-  // because of normalize
+  outline: 2px solid #fff;
+  outline-offset: -8px;
+  border-radius:.4rem;
+  border-color: $secondary-color;
 }
