@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 
@@ -30,6 +31,28 @@ export default function Home() {
         <h1 className={styles.title}>
           My Posts
         </h1>
+        <ul className={styles.posts}>
+          <li>
+            <p className={styles.postsContent}>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis quo dolor rerum laborum, repellendus
+              accusantium cum odit.
+            </p>
+            <p>14/03/2021</p>
+          </li>
+          <li>
+            <p className={styles.postsContent}>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, laboriosam, mollitia odit nihil provident
+              enim animi maiores cum aspernatur incidunt, deleniti nisi impedit officia?
+            </p>
+            <p>15/03/2021</p>
+          </li>
+          <li>
+            <p className={styles.postsContent}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error natus tempora quis harum et dolores cum magni veniam suscipit!
+            </p>
+            <p>16/03/2021</p>
+          </li>
+        </ul>
       </main>
     </section>
   );
