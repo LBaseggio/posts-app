@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/aria-role */
 /* eslint-disable max-len */
 import Head from 'next/head';
-import Bio from '../components/Bio/Bio';
+import Bio from '../components/Bio';
 import Post from '../components/Post';
-import PostForm from '../components/PostForm/PostForm';
+import PostForm from '../components/PostForm';
 import styles from '../styles/Home.module.scss';
 
 export default function Home() {

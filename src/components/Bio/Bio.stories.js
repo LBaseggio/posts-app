@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/aria-role */
 import React from 'react';
-
 import Bio from './Bio';
 
 export default {
