@@ -37,7 +37,7 @@ export default function Home() {
         Twitter Dupe
         </h1>
         <h4 className={styles.subtitle}>
-          Next.js, StoryBook, HTML, Sass, React-Icons
+          Next.js, StoryBook, HTML, Sass, React-Icons, Applitools, GitHub Actions.
         </h4>
 
         <Bio
