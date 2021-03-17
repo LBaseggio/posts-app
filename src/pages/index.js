@@ -38,14 +38,19 @@ export default function Home() {
       /* -------------------------------------------------------------------------- */
       /*                Global site tag (gtag.js) - Google Analytics                */
       /* -------------------------------------------------------------------------- */
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-C6HPZP768N"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments)}
-          gtag('js', new Date());
-          gtag('config', 'G-C6HPZP768N');
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-C6HPZP768N" >
         </script>
-
+        <script dangerouslySetInnerHTML={
+            { __html: `
+                window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments)}
+                  gtag('js', new Date());
+                  gtag('config', 'G-C6HPZP768N');
+            `}
+        }>
+        </script>
       </Head>
 
       <p>      
