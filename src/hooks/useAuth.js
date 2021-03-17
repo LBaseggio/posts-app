@@ -1,33 +1,38 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+/* eslint-disable import/extensions */
+import {
+  createContext, useContext, useEffect, useState,
+} from 'react';
 
-import { init } from '../lib/auth.js';
+import { init, login as authLogin } from '../lib/auth.js';
 
 export const AuthContext = createContext();
 
-export const AuthProvider = ({children}) => {
-    
-    const[user, setUser] = useState();
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState();
 
-    useEffect(()=>{
-        init((user)=>{
-            setUser(user);
-        })
-    }, [])
-    
+  useEffect(() => {
+    init((user) => {
+      setUser(user);
+    });
+  }, []);
 
-    const contextValue = {
-        user
-    }
+  function login() {
+    authLogin();
+    console.log('logged in');
+  }
 
-    return(
+  const contextValue = { user, login };
+
+  return (
     <AuthContext.Provider value={{
-        test: true
-    }}>
-        {children}
+      test: true,
+    }}
+    >
+      {children}
     </AuthContext.Provider>
-    );
-} 
+  );
+};
 
-export function useAuth(){
-return useContext(AuthContext);
+export function useAuth() {
+  return useContext(AuthContext);
 }

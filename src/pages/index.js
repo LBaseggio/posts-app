@@ -9,8 +9,8 @@ import styles from '../styles/Home.module.scss';
 
 export default function Home() {
 
-  const auth = useAuth();
-  console.log(auth)
+  const {user, login} = useAuth();
+  console.log('user, user');
 
   return (
     <section className={styles.container}>
@@ -36,6 +36,12 @@ export default function Home() {
         <meta name="robots" content="index,follow" />
       </Head>
 
+      <p>      
+        <button type="button" onClick={login}>
+          log in
+        </button>
+      </p>
+      
       <main className={styles.main}>
 
         <h1 className={styles.title}>
