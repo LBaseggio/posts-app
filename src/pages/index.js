@@ -9,8 +9,8 @@ import styles from '../styles/Home.module.scss';
 
 export default function Home() {
 
-  const {user, login} = useAuth();
-  console.log('user, user');
+  const { user, login } = useAuth();
+  console.log('user', user);
 
   return (
     <section className={styles.container}>
@@ -29,11 +29,23 @@ export default function Home() {
         <meta name="description" content="Leandro Baseggio | Frontend Developer – React" />
         <meta name="summary" content="Leandro Baseggio – Portfolio | Frontend Developer – React" />
         <meta name="reply-to" content="leandro.baseggio@gmail.com" />
-        {/* <meta name="url" content="https://leandro-baseggio.netlify.app/" /> */}
-        {/* <meta name="identifier-URL" content="https://leandro-baseggio.netlify.app/" /> */}
+        <meta name="url" content="https://twitter-dupe.netlify.app" />
+        <meta name="identifier-URL" content="https://leandro-baseggio.netlify.app/" />
         <meta name="category" content="portfolio" />
-        {/* <meta name="search_date" content="2021-03-01" /> */}
+        <meta name="search_date" content="2021-03-17" />
         <meta name="robots" content="index,follow" />
+
+      /* -------------------------------------------------------------------------- */
+      /*                Global site tag (gtag.js) - Google Analytics                */
+      /* -------------------------------------------------------------------------- */
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-C6HPZP768N"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)}
+          gtag('js', new Date());
+          gtag('config', 'G-C6HPZP768N');
+        </script>
+
       </Head>
 
       <p>      
@@ -41,7 +53,7 @@ export default function Home() {
           log in
         </button>
       </p>
-      
+
       <main className={styles.main}>
 
         <h1 className={styles.title}>
