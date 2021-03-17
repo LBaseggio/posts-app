@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     init((user) => {
       setUser(user)
-    });
+    }); 
 
     auth.on('login', setUser);
 

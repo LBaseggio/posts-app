@@ -7,8 +7,8 @@ import Post from '../components/Post';
 import PostForm from '../components/PostForm';
 import styles from '../styles/Home.module.scss';
 
-export default function Home() {
-
+export default function Home( { posts } ) {
+  console.log('POSTS', posts);
   const { user, login, logout } = useAuth();
   console.log('USER', user);
 
@@ -55,7 +55,7 @@ export default function Home() {
 
         {!user && (
           <p>      
-            <button type="button" onClick={login}>
+            <button onClick={login}>
               log in
             </button>
           </p>
@@ -63,7 +63,7 @@ export default function Home() {
 
         {user && (
           <p>      
-            <button type="button" onClick={logout}>
+            <button onClick={logout}>
               log out
             </button>
           </p>
@@ -76,7 +76,7 @@ export default function Home() {
         Twitter Dupe
         </h1>
         <h4 className={styles.subtitle}>
-          Next.js, StoryBook, HTML, Sass, React-Icons, Applitools, GitHub Actions, GitHub Authentication,
+          |  Next.js  |  StoryBook  |  HTML  |  Sass  |  React-Icons  |  Applitools  |<br/>|  GitHub Actions  |  GitHub Authentication   |  Airtable |
         </h4>
 
         <Bio
@@ -87,30 +87,20 @@ export default function Home() {
         />
 
         <ul className={styles.posts}>
-          <li>
+        {posts.map(post => {
+          const {content, id, date} = post;
+          return (
+          <li key={id}>
             <Post
-              content="This is the post prop CONTENT"
-              date="12/03/2021"
+              content={content}
+              date={new Intl.DateTimeFormat('en-US', {
+                    dateStyle: 'short',
+                    timeStyle: 'short'
+                  }).format(new Date(date))}
             />
           </li>
-          <li>
-            <Post
-              content="This is the post prop CONTENT"
-              date="13/03/2021"
-            />
-          </li>
-          <li>
-            <Post
-              content="This is the post prop CONTENT"
-              date="14/03/2021"
-            />
-          </li>
-          <li>
-            <Post
-              content="This is the post prop CONTENT"
-              date="15/03/2021"
-            />
-          </li>
+        )
+        })}
         </ul>
 
         {user && (
@@ -122,3 +112,26 @@ export default function Home() {
     </section>
   );
 }
+
+export async function getStaticProps() {
+  // const posts = await getAllPosts();
+  const response = await fetch(`https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/Posts`, {
+    headers: {
+      Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`
+    }
+  });
+  const { records } = await response.json();
+  const posts = records.map((record)=> {
+    return {
+      id: record.id,
+      ...record.fields
+    }
+  })
+
+  return {
+    props: {
+      posts
+    }
+  }
+}
+
