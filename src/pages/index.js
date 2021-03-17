@@ -1,12 +1,17 @@
 /* eslint-disable jsx-a11y/aria-role */
 /* eslint-disable max-len */
 import Head from 'next/head';
+import { useAuth } from '../hooks/useAuth';
 import Bio from '../components/Bio';
 import Post from '../components/Post';
 import PostForm from '../components/PostForm';
 import styles from '../styles/Home.module.scss';
 
 export default function Home() {
+
+  const auth = useAuth();
+  console.log(auth)
+
   return (
     <section className={styles.container}>
       <Head>
@@ -37,7 +42,7 @@ export default function Home() {
         Twitter Dupe
         </h1>
         <h4 className={styles.subtitle}>
-          Next.js, StoryBook, HTML, Sass, React-Icons, Applitools, GitHub Actions.
+          Next.js, StoryBook, HTML, Sass, React-Icons, Applitools, GitHub Actions, GitHub Authentication,
         </h4>
 
         <Bio
