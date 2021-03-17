@@ -9,8 +9,8 @@ import styles from '../styles/Home.module.scss';
 
 export default function Home() {
 
-  const { user, login } = useAuth();
-  console.log('user', user);
+  const { user, login, logout } = useAuth();
+  console.log('USER', user);
 
   return (
     <section className={styles.container}>
@@ -53,12 +53,23 @@ export default function Home() {
         </script>
       </Head>
 
-      <p>      
-        <button type="button" onClick={login}>
-          log in
-        </button>
-      </p>
+        {!user && (
+          <p>      
+            <button type="button" onClick={login}>
+              log in
+            </button>
+          </p>
+        )}
 
+        {user && (
+          <p>      
+            <button type="button" onClick={logout}>
+              log out
+            </button>
+          </p>
+        )}
+
+      
       <main className={styles.main}>
 
         <h1 className={styles.title}>
@@ -102,7 +113,10 @@ export default function Home() {
           </li>
         </ul>
 
+        {user && (
         <PostForm />
+        )}
+
 
       </main>
     </section>

@@ -24,4 +24,4 @@ export function logout(callback) {
   netlifyIdentity.on('logout', () => {
     callback();
   });
-}
+} 

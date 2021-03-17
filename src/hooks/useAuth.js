@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
 
   function logout() {
     authLogout(() => {
-      setUser(undefined)
+      setUser(null)
     })
   }
 
