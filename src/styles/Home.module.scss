@@ -1,6 +1,14 @@
 $primary-color: #0070f3;
 $secondary-color: #004fa8;
 
+@mixin gradient-text($angle: 135deg, $color: $primary-color, $amount: 25%) {
+  color: $color;
+  background: -webkit-linear-gradient($angle, $color, adjust-hue($color, $amount));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+
 .container {
   display: flex;
   flex-direction: column;
@@ -19,16 +27,17 @@ $secondary-color: #004fa8;
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 2.5rem;
+  font-size: 2.9rem;
   text-align: center;
-  color: $secondary-color
+  @include gradient-text;
 }
 
 .subtitle {
   margin: .8rem 0 5rem 0;
   font-size: 1rem;
   text-align: center;
-  color: $secondary-color
+  line-height: 1.7rem;
+  @include gradient-text;
 }
 
 

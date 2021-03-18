@@ -1,3 +1,6 @@
+$primary-color: #0070f3;
+$secondary-color: #004fa8;
+
 .bio {
     display: flex;
 }
@@ -9,12 +12,13 @@
     justify-content: center;
 
     img {
-        width: 9rem;
+        width: 10rem;
         height: auto;
         border-radius: 50%;
     }
-
 }
+
+
 
 .bioContent {
     display: flex;
