@@ -30,7 +30,6 @@ export default function Home({ posts: defaultPosts }) {
 
   return (
     <section className={styles.container}>
-     
       <Head>
       <title>Twitter Dupe</title>
         <link rel="icon" href="/posts-app.ico" />
@@ -95,6 +94,10 @@ export default function Home({ posts: defaultPosts }) {
           />
         </a>
 
+        { user && (
+          <PostForm onSubmit={handleOnSubmit} />
+        ) }
+
         <ul className={styles.posts}>
           {postsSorted.map(post => {
             const { content, id, date } = post;
@@ -111,10 +114,6 @@ export default function Home({ posts: defaultPosts }) {
             )
           })}
         </ul>
-
-        { user && (
-          <PostForm onSubmit={handleOnSubmit} />
-        ) }
 
       </main>
     </section>
