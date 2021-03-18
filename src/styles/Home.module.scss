@@ -1,13 +1,16 @@
 $primary-color: #0070f3;
 $secondary-color: #004fa8;
+$tertiary-color: #003a7d;
 
-@mixin gradient-text($angle: 135deg, $color: $primary-color, $amount: 25%) {
-  color: $color;
-  background: -webkit-linear-gradient($angle, $color, adjust-hue($color, $amount));
+@mixin gradient-text {
+  background-color: $primary-color;
+  background-image: linear-gradient(135deg, $primary-color, $tertiary-color);
+  background-size: 100%;
   -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
   -webkit-background-clip: text;
+  -moz-background-clip: text;
 }
-
 
 .container {
   display: flex;
@@ -16,7 +19,9 @@ $secondary-color: #004fa8;
   align-items: center;
   padding: 0 0.5rem;
   min-height: 100vh;
+  background-image: url("../assets/cubes.png");
 }
+
 
 .main {
   padding: 2rem 0 5rem 0;
@@ -27,9 +32,9 @@ $secondary-color: #004fa8;
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 2.9rem;
+  font-size: 3rem;
   text-align: center;
-  @include gradient-text;
+  @include  gradient-text;
 }
 
 .subtitle {
@@ -37,7 +42,7 @@ $secondary-color: #004fa8;
   font-size: 1rem;
   text-align: center;
   line-height: 1.7rem;
-  @include gradient-text;
+  @include  gradient-text;
 }
 
 
