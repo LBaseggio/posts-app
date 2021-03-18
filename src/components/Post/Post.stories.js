@@ -10,7 +10,6 @@ const Template = () => (
   <Post
     content="This is the post prop CONTENT"
     date="15/03/2021"
-    like="0"
   />
 );
 export const Default = Template.bind({});

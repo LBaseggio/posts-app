@@ -1,25 +1,15 @@
-import {  useState } from 'react';
 import { FaHeart, FaShareAlt } from 'react-icons/fa';
 import styles from './Post.module.scss';
 
-function Post ({ content, date, like }){
-  const [count, setCount] = useState(0);
-
+const Post = ({ content, date }) => (
   <>
     <p className={styles.postContent}>
       {content}
     </p>
-    <ul className={styles.postMeta}>s
+    <ul className={styles.postMeta}>
       <li className={styles.postMetaData}>
-        <button
-            type="button"
-            onClick={() => setCount(like + 1)}
-          >
-          <FaHeart />
-        </button>
-        <p>
-          {like}
-        </p>
+        <FaHeart />
+        23
       </li>
       <li className={styles.postMetaData}>
         <FaShareAlt />
@@ -30,6 +20,6 @@ function Post ({ content, date, like }){
       </li>
     </ul>
   </>
-};
+);
 
 export default Post;

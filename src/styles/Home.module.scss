@@ -37,8 +37,8 @@ $tertiary-color: #003a7d;
 .logButton {
   float: right;
   cursor: pointer;
+  min-width: 98px;
   margin: 0 0 0 0;
-  min-width: 115px;
   color: #fff;
   font-size: inherit;
   text-decoration: none;
@@ -51,6 +51,7 @@ $tertiary-color: #003a7d;
   outline: 2px solid #fff;
   outline-offset: -2px;
   transition: outline-offset 150ms ease;
+  // background: $secondary-color;
   @include gradient-bg;
 }
 

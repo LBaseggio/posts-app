@@ -12,6 +12,7 @@ const PostForm = ({ onSubmit }) => {
 
     if ( typeof onSubmit === 'function' ) {
       onSubmit(data, event);
+      field.value = "";
     }
   }
 
