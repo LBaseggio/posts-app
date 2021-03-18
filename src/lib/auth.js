@@ -11,7 +11,7 @@ export function init(callback) {
   });
 }
 
-export function login(callback) {
+export function logIn(callback) {
   netlifyIdentity.open();
   netlifyIdentity.on('login', user => {
     callback(user);
@@ -19,7 +19,7 @@ export function login(callback) {
   });
 }
 
-export function logout(callback) {
+export function logOut(callback) {
   netlifyIdentity.logout();
   netlifyIdentity.on('logout', () => {
     callback();

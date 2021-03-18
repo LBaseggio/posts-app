@@ -10,6 +10,7 @@ export default async (req, res) => {
     });
 
     const { records } = await response.json();
+
     const posts = records.map(record => {
       return {
         id: record.id,
@@ -23,7 +24,9 @@ export default async (req, res) => {
   }
 
   if ( req.method === 'POST' ) {
+
     const { authorization } = req.headers;
+
     const auth = await fetch(`${process.env.NEXT_PUBLIC_AUTH_ENDPOINT}/user`, {
       headers: {
         Authorization: authorization
@@ -31,6 +34,7 @@ export default async (req, res) => {
     });
 
     const authJson = await auth.json();
+
     if ( !authJson.id ) {
       res.status(401).json({ 
         error: 'Invalid token'
