@@ -29,7 +29,7 @@ $tertiary-color: #003a7d;
   background-image: url("../assets/cubes.png");
 }
 
-.buttonContainer{
+.buttonContainer {
   display: inline-block;
   margin: 0 0 2rem 90%;
 }
@@ -37,7 +37,7 @@ $tertiary-color: #003a7d;
 .logButton {
   float: right;
   cursor: pointer;
-  min-width: 98px;
+  min-width: 115px;
   margin: 0 0 0 0;
   color: #fff;
   font-size: inherit;
@@ -73,7 +73,7 @@ $tertiary-color: #003a7d;
   line-height: 1.15;
   font-size: 3rem;
   text-align: center;
-  @include  gradient-text;
+  @include gradient-text;
 }
 
 .subtitle {
@@ -81,7 +81,7 @@ $tertiary-color: #003a7d;
   font-size: 1rem;
   text-align: center;
   line-height: 1.7rem;
-  @include  gradient-text;
+  @include gradient-text;
 }
 
 .posts {
@@ -91,6 +91,7 @@ $tertiary-color: #003a7d;
 
   &>li {
     margin-bottom: 3rem;
+
     &:last-child {
       margin-bottom: 0rem;
     }
@@ -100,6 +101,7 @@ $tertiary-color: #003a7d;
     &:first-child {
       margin-top: 0;
     }
+
     &:last-child {
       margin-bottom: 0;
     }
