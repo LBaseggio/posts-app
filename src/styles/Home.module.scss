@@ -51,7 +51,6 @@ $tertiary-color: #003a7d;
   outline: 2px solid #fff;
   outline-offset: -2px;
   transition: outline-offset 150ms ease;
-  // background: $secondary-color;
   @include gradient-bg;
 }
 
