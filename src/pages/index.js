@@ -91,12 +91,14 @@ export default function Home({ posts: defaultPosts }) {
           |  Next.js  |  StoryBook  |  HTML  |  Sass  |  React-Icons  |  Applitools  |<br/>|  GitHub Actions  |  GitHub Authentication   |  Airtable |
         </h4>
         
-      <Bio
-          headshot="https://avatars.githubusercontent.com/u/68951643?s=460&u=bc0ec78a4231a7be156acd46bbcd0d489d1dc180&v=4"
-          name="Leandro Baseggio"
-          tagline="Learning by doing!"
-          role="Frontend Developer"
-        />
+        <a href="https://leandro-baseggio.netlify.app/">
+          <Bio
+            headshot="https://avatars.githubusercontent.com/u/68951643?s=460&u=bc0ec78a4231a7be156acd46bbcd0d489d1dc180&v=4"
+            name="Leandro Baseggio"
+            tagline="Learning by doing!"
+            role="Frontend Developer"
+          />
+        </a>
 
         <ul className={styles.posts}>
           {postsSorted.map(post => {
@@ -130,7 +132,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts:
+      posts
     }
   }
 }
