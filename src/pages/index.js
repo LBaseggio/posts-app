@@ -1,16 +1,31 @@
 /* eslint-disable jsx-a11y/aria-role */
 /* eslint-disable max-len */
 import Head from 'next/head';
+import { useState , useEffect} from 'react';
 import { useAuth } from '../hooks/useAuth';
 import Bio from '../components/Bio';
 import Post from '../components/Post';
 import PostForm from '../components/PostForm';
 import styles from '../styles/Home.module.scss';
 
-export default function Home( { posts } ) {
-  console.log('POSTS', posts);
+export default function Home({ posts: defaultPosts }) {
+
+  const [posts, updatePosts] = useState(defaultPosts);
+
+  const postsSorted = posts.sort(function(a,b){
+    return new Date(b.date) - new Date(a.date);
+  });
+
   const { user, login, logout } = useAuth();
-  console.log('USER', user);
+
+  async function handleOnSubmit(data, event) {
+    event.preventDefault();
+
+    await createPost(data);
+
+    const posts = await getAllPosts();
+    updatePosts(posts);
+  }
 
   return (
     <section className={styles.container}>
@@ -114,19 +129,8 @@ export default function Home( { posts } ) {
 }
 
 export async function getStaticProps() {
-  // const posts = await getAllPosts();
-  const response = await fetch(`https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/Posts`, {
-    headers: {
-      Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`
-    }
-  });
-  const { records } = await response.json();
-  const posts = records.map((record)=> {
-    return {
-      id: record.id,
-      ...record.fields
-    }
-  })
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/posts`);
+  const { posts } = await response.json();
 
   return {
     props: {
