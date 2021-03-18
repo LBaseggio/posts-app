@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/aria-role */
 /* eslint-disable max-len */
 import Head from 'next/head';
-import { useState , useEffect} from 'react';
+import { useState , useEffect } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import Bio from '../components/Bio';
 import Post from '../components/Post';
@@ -12,9 +12,16 @@ export default function Home({ posts: defaultPosts }) {
 
   const [posts, updatePosts] = useState(defaultPosts);
 
-  const postsSorted = posts.sort(function(a,b){
-    return new Date(b.date) - new Date(a.date);
-  });
+  useEffect(()=>{
+    async function run(){
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/posts`);
+    const { posts } = await response.json();
+    updatePosts(posts);
+    } run();
+  }, []);
+
+
+  const postsSorted = posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const { user, login, logout } = useAuth();
 
@@ -117,19 +124,16 @@ export default function Home({ posts: defaultPosts }) {
         )
         })}
         </ul>
-
         {user && (
         <PostForm />
         )}
-
-
       </main>
     </section>
   );
 }
 
 export async function getStaticProps() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/posts`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}api/posts`);
   const { posts } = await response.json();
 
   return {
