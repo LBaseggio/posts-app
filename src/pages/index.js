@@ -31,7 +31,6 @@ export default function Home({ posts: defaultPosts }) {
   return (
     <section className={styles.container}>
      
-     
       <Head>
       <title>Twitter Dupe</title>
         <link rel="icon" href="/posts-app.ico" />
@@ -68,21 +67,16 @@ export default function Home({ posts: defaultPosts }) {
         </script>
       </Head>
   
-
-
-      { !user && (
-        <p>
-          <button classname={styles.buttonToLog} onClick={logIn}>Log In</button>
-        </p>
-      ) }
-
-      { user && (
-        <p>
-          <button classname={styles.buttonToLog} onClick={logOut}>Log Out</button>
-        </p>
-      ) }
-
       <main className={styles.main}>
+          <span className={styles.buttonContainer}>
+            { !user && (
+                <button className={styles.logButton} onClick={logIn}>Log In</button>
+            ) }
+
+            { user && (
+                <button className={styles.logButton} onClick={logOut}>Log Out</button>
+            ) }
+        </span>
         <h1 className={styles.title}>
         Twitter Dupe
         </h1>
