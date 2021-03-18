@@ -27,10 +27,8 @@ export default function Home({ posts: defaultPosts }) {
     updatePosts(posts);
   }
 
-
   return (
     <section className={styles.container}>
-     
       <Head>
       <title>Twitter Dupe</title>
         <link rel="icon" href="/posts-app.ico" />
@@ -72,7 +70,6 @@ export default function Home({ posts: defaultPosts }) {
             { !user && (
                 <button className={styles.logButton} onClick={logIn}>Log In</button>
             ) }
-
             { user && (
                 <button className={styles.logButton} onClick={logOut}>Log Out</button>
             ) }
@@ -116,7 +113,6 @@ export default function Home({ posts: defaultPosts }) {
             )
           })}
         </ul>
-
       </main>
     </section>
   )
@@ -124,7 +120,6 @@ export default function Home({ posts: defaultPosts }) {
 
 export async function getStaticProps() {
   const posts = await getAllPosts();
-
   return {
     props: {
       posts
