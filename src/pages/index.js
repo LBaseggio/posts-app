@@ -100,7 +100,7 @@ export default function Home({ posts: defaultPosts }) {
 
         <ul className={styles.posts}>
           {postsSorted.map(post => {
-            const { content, id, date } = post;
+            const { content, id, date, like } = post;
             return (
               <li key={id}>
                 <Post
@@ -109,6 +109,7 @@ export default function Home({ posts: defaultPosts }) {
                     dateStyle: 'short',
                     timeStyle: 'short'
                   }).format(new Date(date))}
+                  like={like}
                 />
               </li>
             )

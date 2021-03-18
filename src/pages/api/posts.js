@@ -1,5 +1,7 @@
 const fetch = require('node-fetch');
 
+
+
 export default async (req, res) => {
 
   if ( req.method === 'GET' ) {
@@ -49,7 +51,8 @@ export default async (req, res) => {
         {
           fields: {
             content,
-            date: new Date().toISOString()
+            date: new Date().toISOString(),
+            like,
           }
         }
       ]
@@ -63,9 +66,8 @@ export default async (req, res) => {
       },
       body: JSON.stringify(data)
     });
-
     res.status(201).json({ response })
-
+    console.log('response', response)
     return;
   }
 
