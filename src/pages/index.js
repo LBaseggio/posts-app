@@ -22,16 +22,16 @@ export default function Home({ posts: defaultPosts }) {
 
   async function handleOnSubmit(data, e) {
     e.preventDefault();
-
     await createPost(data);
-
     const posts = await getAllPosts();
     updatePosts(posts);
   }
 
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
+     
+     
       <Head>
       <title>Twitter Dupe</title>
         <link rel="icon" href="/posts-app.ico" />
@@ -50,11 +50,9 @@ export default function Home({ posts: defaultPosts }) {
         <meta name="url" content="https://twitter-dupe.netlify.app" />
         <meta name="identifier-URL" content="https://leandro-baseggio.netlify.app/" />
         <meta name="category" content="portfolio" />
-
       /* -------------------------------------------------------------------------- */
       /*                Global site tag (gtag.js) - Google Analytics                */
       /* -------------------------------------------------------------------------- */
-      
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-C6HPZP768N" >
@@ -71,24 +69,27 @@ export default function Home({ posts: defaultPosts }) {
       </Head>
   
 
+
       { !user && (
         <p>
-          <button onClick={logIn}>Log In</button>
+          <button classname={styles.buttonToLog} onClick={logIn}>Log In</button>
         </p>
       ) }
 
       { user && (
         <p>
-          <button onClick={logOut}>Log Out</button>
+          <button classname={styles.buttonToLog} onClick={logOut}>Log Out</button>
         </p>
       ) }
 
       <main className={styles.main}>
-      <h1 className={styles.title}>
+        <h1 className={styles.title}>
         Twitter Dupe
         </h1>
         <h4 className={styles.subtitle}>
-          |  Next.js  |  StoryBook  |  HTML  |  Sass  |  React-Icons  |  Applitools  |<br/>|  GitHub Actions  |  GitHub Authentication   |  Airtable |
+          |  Next.js  |  StoryBook  |  HTML  |  Sass  |  React-Icons  |  Applitools
+          |<br/>|
+          GitHub Actions  |  GitHub Authentication   |  Airtable |
         </h4>
         
         <a href="https://leandro-baseggio.netlify.app/">
@@ -103,7 +104,6 @@ export default function Home({ posts: defaultPosts }) {
         <ul className={styles.posts}>
           {postsSorted.map(post => {
             const { content, id, date } = post;
-
             return (
               <li key={id}>
                 <Post
@@ -123,7 +123,7 @@ export default function Home({ posts: defaultPosts }) {
         ) }
 
       </main>
-    </div>
+    </section>
   )
 }
 
