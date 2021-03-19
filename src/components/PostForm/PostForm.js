@@ -1,7 +1,7 @@
 import styles from './PostForm.module.scss';
 
 const PostForm = ({ onSubmit }) => {
-  function handleOnSubmit(event, like) {
+  function handleOnSubmit(event) {
     const { currentTarget } = event;
     const fields = Array.from(currentTarget.elements);
     const data = {};
