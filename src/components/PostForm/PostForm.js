@@ -4,6 +4,7 @@ const PostForm = ({ onSubmit }) => {
   function handleOnSubmit(event) {
     const { currentTarget } = event;
     const fields = Array.from(currentTarget.elements);
+    console.log('fields', fields);
     const data = {};
     fields.forEach(field => {
       if ( !field.name ) return;
@@ -17,8 +18,8 @@ const PostForm = ({ onSubmit }) => {
 
   return (
     <form onSubmit={handleOnSubmit}>
+      <input type="hidden" name="like" value="0" />
       <textarea name="content" className={styles.formContent}></textarea>
-      <input type="text" name="like" value="0"></input>
       <button className={styles.formButton}>Add New Post</button>
     </form>
   )
