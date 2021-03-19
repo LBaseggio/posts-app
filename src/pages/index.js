@@ -20,8 +20,8 @@ export default function Home({ posts: defaultPosts }) {
 
   const { user, logIn, logOut } = useAuth();
 
-  async function handleOnSubmit(data, e) {
-    e.preventDefault();
+  async function handleOnSubmit(data, event) {
+    event.preventDefault();
     await createPost(data);
     const posts = await getAllPosts();
     updatePosts(posts);
