@@ -2,7 +2,6 @@ $primary-color: #0070f3;
 $secondary-color: #004fa8;
 $tertiary-color: #003a7d;
 
-
 @mixin gradient-bg {
     background-color: $primary-color;
     background-image: linear-gradient(115deg, $primary-color, $tertiary-color);
@@ -16,10 +15,9 @@ $tertiary-color: #003a7d;
     margin: 4rem 0 1.5rem 0;
     padding: 1rem;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     border-radius: .4rem;
 }
-
 
 .formButton {
     float: right;
@@ -30,7 +28,6 @@ $tertiary-color: #003a7d;
     text-transform: capitalize;
     line-height: 1;
     margin: 0 0 3rem 0;
-
 
     padding: .75em 1.5em;
     border: 2px solid #fff;

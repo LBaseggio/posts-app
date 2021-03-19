@@ -1,7 +1,5 @@
 const fetch = require('node-fetch');
 
-
-
 export default async (req, res) => {
 
   if ( req.method === 'GET' ) {
@@ -10,25 +8,20 @@ export default async (req, res) => {
         Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`
       }
     });
-
     const { records } = await response.json();
-
     const posts = records.map(record => {
       return {
         id: record.id,
         ...record.fields
       }
     })
-
     res.status(200).json({ posts })
-
     return;
   }
 
   if ( req.method === 'POST' ) {
 
     const { authorization } = req.headers;
-
     const auth = await fetch(`${process.env.NEXT_PUBLIC_AUTH_ENDPOINT}/user`, {
       headers: {
         Authorization: authorization
@@ -45,14 +38,15 @@ export default async (req, res) => {
     }
 
     const { content } = JSON.parse(req.body);
-
     const data = {
       records: [
         {
           fields: {
             content,
             date: new Date().toISOString(),
-            // like,
+            /* -------------------------------------------------------------------------- */
+            /*                                    like,                                   */
+            /* -------------------------------------------------------------------------- */
           }
         }
       ]
@@ -70,5 +64,4 @@ export default async (req, res) => {
     console.log('response', response)
     return;
   }
-
 }
