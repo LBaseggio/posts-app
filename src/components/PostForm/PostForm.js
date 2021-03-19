@@ -4,7 +4,7 @@ const PostForm = ({ onSubmit }) => {
   function handleOnSubmit(event) {
     const { currentTarget } = event;
     const fields = Array.from(currentTarget.elements);
-    console.log('fields', fields);
+    // console.log('fields', fields);
     const data = {};
     fields.forEach(field => {
       if ( !field.name ) return;
